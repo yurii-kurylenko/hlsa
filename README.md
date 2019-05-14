@@ -8,3 +8,6 @@ Repository consists of:
   4) Small Ruby script to measure error rates limit
     Example: "ruby check_server.rb http://localhost:8080"
   5) slowloris.py - realization of slowloris attack in Python from https://github.com/gkbrk/slowloris
+
+
+Some additional configuration that might be considered is to use iptables to blacklist IPs with suspicious activity.
