@@ -1,0 +1,18 @@
+version: "3"
+services:
+  slowloris:
+    image: python
+    command: ["python3", "/app/slowloris.py", "-s $ATTACK_SOCKETS_COUNT", "$DDOS_ATTACK_TARGET"]
+    volumes:
+      - ./slowloris.py:/app/slowloris.py
+    env_file:
+      .env
+    depends_on:
+     - web
+  web:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./index.html:/www/index.html
+    ports:
+      - "8080:80"
