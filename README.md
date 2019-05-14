@@ -8,6 +8,9 @@ Repository consists of:
   4) Small Ruby script to measure error rates limit
     Example: "ruby check_server.rb http://localhost:8080"
   5) slowloris.py - realization of slowloris attack in Python from https://github.com/gkbrk/slowloris
+  6) .env with vars:
+    - DDOS_ATTACK_TARGET (default "web" from the docker-compose context)
+    - ATTACK_SOCKETS_COUNT (number of concurrent connections from attacker server)
 
 
 Some additional configuration that might be considered is to use iptables to blacklist IPs with suspicious activity.
